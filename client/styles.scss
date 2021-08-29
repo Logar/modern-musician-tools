@@ -1,0 +1,162 @@
+// You can add global styles to this file, and also import other style files
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --light-blue: rgb(222, 247, 248);
+  --light-purple: rgb(189, 199, 255);
+  --light-pink: rgb(222, 193, 251);
+  --medium-purple: #2a143a9a;
+  --dark-purple: rgb(41, 13, 90);
+  --transition-speed: 600ms;
+}
+
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.top-container {
+  min-width: 450px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+nav.navbar.navbar-dark {
+  background-color: #133e6b !important;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.form {
+  position: relative;
+  padding: 1em;
+  background: #def7f8;
+  border: 1px solid #c1c1c1;
+  margin: 0 auto 1.5rem auto;
+  max-width: 600px;
+}
+.submit-container {
+  text-align: right;
+}
+
+// grid layout
+.grid-container {
+  display: grid;
+  grid-template-columns: 80px 3fr;
+  grid-gap: 1rem;
+
+  > label {
+    grid-column: 1 / 2;
+    padding: 0.5em 0.5em 0.5em 0;
+  }
+
+  > input {
+    grid-column: 2 / 4;
+    border: 1px solid #9c9c9c;
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+  }
+  .ng-valid[required],
+  .ng-valid.required {
+    border-left: 5px solid #42a948; /* green */
+  }
+
+  .ng-invalid:not(form) {
+    border-left: 5px solid #a94442; /* red */
+  }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

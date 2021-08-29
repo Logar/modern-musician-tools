@@ -1,0 +1,39 @@
+.song-component {
+  #edit-forms-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #button-container {
+    .btn {
+      top: 1px;
+      color: black;
+      font-weight: 600;
+      border-bottom: none;
+      border-color: #c1c1c1;
+      border-radius: inherit;
+    }
+    .btn.btn-secondary.focus,
+    .btn.btn-secondary:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    label:first-child {
+      margin-left: 15px;
+    }
+    label {
+      margin-right: 15px;
+    }
+  }
+  .edit-menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    > div.edit-section {
+      flex: 1 1 150px;
+    }
+  }
+}

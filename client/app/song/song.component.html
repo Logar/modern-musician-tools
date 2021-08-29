@@ -1,0 +1,96 @@
+<div class="song-component card">
+  <h1 class="card-header">Songs</h1>
+  <select
+    id="select-song"
+    class="btn btn-dark selectpicker show-tick"
+    (change)="onChangeSong($event)"
+  >
+    <option *ngFor="let item of songModels" [value]="item._id">
+      {{ item.title }}
+    </option>
+  </select>
+  <div class="card-body">
+    <div class="edit-menu">
+      <div class="edit-section">
+        <div>
+          <label for="toggle-edit-switch">Edit Mode: </label>
+        </div>
+        <label id="toggle-edit-switch" class="switch">
+          <input type="checkbox" [(ngModel)]="toggleEditMode" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="edit-section">
+        <div>
+          <label for="playback">Playback speed</label>
+        </div>
+        <select
+          id="playback"
+          class="btn btn-info selectpicker show-tick"
+          (change)="onChangePlayback($event)"
+        >
+          <option value="0.25">0.25</option>
+          <option value="0.50">0.50</option>
+          <option value="0.75">0.75</option>
+          <option value="1.00" selected>Normal</option>
+        </select>
+      </div>
+    </div>
+    <div id="edit-forms-container" *ngIf="toggleEditMode">
+      <div
+        id="button-container"
+        class="btn-group btn-group-toggle"
+        data-toggle="buttons"
+      >
+        <label
+          class="btn btn-secondary"
+          [ngStyle]="{ 'background-color': 'var(--light-blue)' }"
+        >
+          <input
+            type="radio"
+            name="toggleForms"
+            (click)="toggleForms = 'add-chord'"
+          />
+          Add Chord
+        </label>
+        <label
+          class="btn btn-secondary"
+          [ngStyle]="{ 'background-color': 'var(--light-purple)' }"
+        >
+          <input
+            type="radio"
+            name="toggleForms"
+            (click)="toggleForms = 'add-song'"
+          />
+          Add Song
+        </label>
+        <label
+          class="btn btn-secondary"
+          [ngStyle]="{ 'background-color': 'var(--light-pink)' }"
+        >
+          <input
+            type="radio"
+            name="toggleForms"
+            (click)="toggleForms = 'edit-song'"
+          />
+          Edit Song
+        </label>
+      </div>
+      <div [ngSwitch]="toggleForms">
+        <chord-form *ngSwitchDefault="'add-chord'" data-formtype="add">
+        </chord-form>
+        <chord-form *ngSwitchCase="'edit-chord'" data-formtype="edit">
+        </chord-form>
+        <song-form *ngSwitchCase="'add-song'" data-formtype="add"> </song-form>
+        <song-form *ngSwitchCase="'edit-song'" data-formtype="edit">
+        </song-form>
+      </div>
+    </div>
+    <chord-slider
+      [chordModels]="chordModels"
+      [activeSong]="activeSong"
+      [toggleEditMode]="toggleEditMode"
+    >
+    </chord-slider>
+  </div>
+</div>

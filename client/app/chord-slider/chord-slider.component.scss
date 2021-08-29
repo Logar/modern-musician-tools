@@ -1,0 +1,56 @@
+.chord-slider {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 105px;
+  margin-bottom: 20px;
+  padding: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: #d8d4cf;
+  .cell {
+    position: relative;
+    width: 100px;
+    height: 75px;
+    margin-right: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--medium-purple);
+    color: #ffffff;
+    .active {
+      background-color: #231250;
+      font-weight: bold;
+    }
+  }
+}
+.chord-slider::-webkit-scrollbar {
+  height: 10px;
+}
+.chord-slider::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.chord-slider::-webkit-scrollbar-thumb {
+  background-color: #612b43;
+  border-radius: 10px;
+}
+.video {
+  display: flex;
+  width: 100%;
+  max-width: 640px;
+  max-height: 360px;
+  margin: auto;
+}
+.video:focus {
+  outline: none;
+}
+a > .trash {
+  color: white;
+}
+.trash {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
